@@ -11,11 +11,13 @@ DevOps is an approach to bridge the gap between software development and operati
 
 DevOps can only work when the Software Development Lige Cycle (**SDLC**) can support it.
 
-![Feedback Loop](/assets/img/feedbackLoop.png)
+<div style="text-align:center">
+  <img src ="/assets/img/feedbackLoop.png"/>
+</div>
 
 DevOps aim is to complete the full SDLC as quickly as possible!
 
-## DevOps Pros
+## DevOps Pros & Benefits
 
 * Change management Process
 * DevOps is the Agile Next Level :)
@@ -24,3 +26,7 @@ DevOps aim is to complete the full SDLC as quickly as possible!
 * Lower Mean Time to Recovery
 * Lower Lead Time for Changes
 * More reliable software
+* Shorter time to market
+* Better quality
+* Better collaboration between development and operations
+* Releases are quicker and more stable
