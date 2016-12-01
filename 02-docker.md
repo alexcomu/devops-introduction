@@ -1,4 +1,57 @@
-# Introduction to Docker Containers
+# Microservices
+
+Monolithic application is **BAD**:
+
+* Easy to develop, test and deploy
+* Tend to become large and complex
+* Difficult to work on as a team
+* Higher risk of failure when deploying
+
+So, Microservices are **better**:
+
+* Monolithic application divided into smaller "microservices"
+* Smaller service can use its own technology stacked
+* Easier for developers to understand a single services
+* Quicker to build and faster to deploy
+
+# Docker
+
+Docker is an open platform for developers and sysadmins to build, ship and run distributed applications:
+
+* Docker Engine: a portable, lightweight runtime and packaging tool
+* Docker Hub: a cloud service for sharing applications and automating workflows
+* Docker enables apps to be quickly assembled from components
+* Docker eliminates the friction between Dev, QA and production environments
+* It should be able to ship faster
+* Should be able to run the same app, unchanged, on laptops, data center VMs and cloud.
+* Docker uses LXC (Linux Containers) for operating system-level virtualization.
+
+## Dockerfile
+
+Is a text document that contains all the istructions and commands used to build a Docker image. We can use **docker build** to create an automated build that runs each istruction from the Dockerfile.
+
+### Dockerfile example
+
+For example, if we want to create a simple image that runs a basic Nodejs application with should write a Dockerfile like the following
+
+    FROM node:0.12
+    WORKDIR /app
+    ADD ./app
+    RUN npm install
+    EXPOSE 3000
+    CMD node index.js
+
+Now that the Dockerfile is ready we need to run the build command:
+
+    docker build -t alexcomu/MYNODEAPP .
+
+We can now run the Node app:
+
+    docker run -p 8080:3000 -t alexcomu/MYNODEAPP
+
+Opening a Browser we can go to the link: **http://localhost:8080** and we'll see the node application.
+
+# Introduction to Containers
 
 ## Virtual Machines VS Containers
 
