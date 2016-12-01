@@ -4,7 +4,7 @@ Just a simple overview on DevOps, Continuos Delivery and Version Control. I will
 
 ## Important URLs
 
-* [github](www.github.com)
-* [chef](www.chef.io)
-* [ansible](www.ansible.com)
+* [github](http://www.github.com)
+* [chef](http://www.chef.io)
+* [ansible](http://www.ansible.com)
 * [Jenkins](https://jenkins-ci.org/)
