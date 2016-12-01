@@ -115,3 +115,54 @@ Is a service that provides public / private registries for Docker images. Click 
 ## Docker Compose
 
 Compose is a tool part of Docker to define your multi-container docker environment as a code that can manage the lifecycle of a docker container. Typically you write a Dockerfile for every container you want to launch and then you launch and administrate the containers with the **docker-compose** command.
+
+### Docker compose EXAMPLE
+
+First of all we need to install docker-compose:
+
+    curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+    docker-compose --version
+
+Here an example of a **docker-compose.yml** file:
+
+    web:
+        build: .
+        command: node index-db.js
+        ports:
+            - "3000:3000"
+        links:
+            - db
+        environment:
+            MYSQL_DATABASE: myapp
+            MYSQL_USER: myapp
+            MYSQL_PASSWORD: mysecurepass
+            MYSQL_HOST: db
+    db:
+        image: orchardup/mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: myapp
+            MYSQL_USER: myapp
+            MYSQL_PASSWORD: mysecurepass
+
+We have defined two different containers, one for a simple Nodejs Web app and one for a mysql database.
+To run the database and then the node app use the following steps:
+
+    docker-compose up -d db
+    docker-compose up -d web
+
+To turn off all use the command **docker-compose down**.
+
+## Docker Machine
+
+Docker Machine is a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like AWS or Digital Ocean.
+
+Using **docker-machine** commands, you can start, inspect, stop, and restart a managed host, upgrade the Docker client and daemon, and configure a Docker client to talk to your host.
+
+## Docker Swarm
+
+Docker Swarm is native clustering for Docker. It turns a pool of Docker hosts into a single, virtual Docker host. Because Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
+
+Like other Docker projects, Docker Swarm follows the “swap, plug, and play” principle. As initial development settles, an API will develop to enable pluggable backends. This means you can swap out the scheduling backend Docker Swarm uses out-of-the-box with a backend you prefer. Swarm’s swappable design provides a smooth out-of-box experience for most use cases, and allows large-scale production deployments to swap for more powerful backends, like Mesos.
