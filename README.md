@@ -4,10 +4,12 @@ Just a simple overview on DevOps, Continuos Delivery and Version Control. I will
 
 ## Important URLs
 
-* [github](http://www.github.com)
-* [chef](http://www.chef.io)
-* [ansible](http://www.ansible.com)
+* [Github](http://www.github.com)
+* [Vagrant](https://www.vagrantup.com/)
+* [Chef](http://www.chef.io)
+* [Ansible](http://www.ansible.com)
 * [Jenkins](https://jenkins-ci.org/)
+* [Docker](https://www.docker.com/)
 
 ## 01 Introduction to devops
 
